@@ -11,20 +11,31 @@ function createGrid() {
             let pixel = document.createElement('div');
             let width = 1000 / num;
             pixel.classList.add('pixel');
+            pixel.id = `${i}x${j}`;
             pixel.style.cssText += `width: ${width}px; height: ${width}px`;
+            pixel.addEventListener('mouseover', changeColor);
             row.appendChild(pixel);
         }
         canvas.appendChild(row); //add row container to grid
     }
 }
 
-
 //removes all child elements of parent container
-function wipeGrid(container) {
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
+function wipeGrid() {
+    while (canvas.firstChild) {
+        canvas.removeChild(canvas.firstChild);
     }
 }
 
+function eraseGrid() {
+    canvas.forEach(pixel => pixel.style.cssText += 'background-color: white');
+}
+//change color of pixel when moused over
+function changeColor(e) {
+    e.target.style.cssText += 'background-color: black';
+}
 const createBtn = document.querySelector('.create-grid');
+const clearBtn = document.querySelector('.clear-grid');
+
 createBtn.addEventListener('click', createGrid);
+clearBtn.addEventListener('click', wipeGrid);
