@@ -4,10 +4,10 @@ const canvas = document.querySelector('.container');
 function createGrid() {
     wipeGrid(canvas); //removes old grid
     const num = prompt('How big would you like your canvas?', '');
-    for (i = 0; i < num; i++) { //create num divs and flex container rows
+    for (let i = 0; i < num; i++) { //create num divs and flex container rows
         let row = document.createElement('div');
         row.classList.add('container', 'row');
-        for (j = 0; j < num; j++) { //create num divs in each flex row
+        for (let j = 0; j < num; j++) { //create num divs in each flex row
             let pixel = document.createElement('div');
             let width = 1000 / num;
             pixel.classList.add('pixel');
