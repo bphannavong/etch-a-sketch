@@ -28,14 +28,29 @@ function wipeGrid() {
 }
 
 function eraseGrid() {
-    canvas.forEach(pixel => pixel.style.cssText += 'background-color: white');
+    const pixel = document.querySelectorAll('.pixel');
+    pixel.forEach(pixel => pixel.style.cssText += 'background-color: white');
 }
 //change color of pixel when moused over
 function changeColor(e) {
     e.target.style.cssText += 'background-color: black';
 }
+
+//returns random number from 0-(num-1)
+function random(num) {
+    return Math.floor(Math.random() * num);
+}
+
+//set pixel to random color
+function randomColor(e) {
+    const r = random(256);
+    const g = random(256);
+    const b = random(256);
+    e.target.style.cssText += `background-color: rgb(${r}, ${g}, ${b})`;
+}
+
 const createBtn = document.querySelector('.create-grid');
 const clearBtn = document.querySelector('.clear-grid');
 
 createBtn.addEventListener('click', createGrid);
-clearBtn.addEventListener('click', wipeGrid);
+clearBtn.addEventListener('click', eraseGrid);
