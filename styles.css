@@ -12,15 +12,15 @@ body {
 
 #canvas {
     flex-direction: column;
-    width: 500px;
-    height: 500px;
+    width: 1000px;
+    height: 1000px;
 }
 
 .pixel {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid red 2px;
+    border: solid pink 2px;
     gap: 0px;
     margin: 0;
     flex: 1 auto;

@@ -9,7 +9,7 @@ function createGrid() {
         row.classList.add('container', 'row');
         for (j = 0; j < num; j++) { //create num divs in each flex row
             let pixel = document.createElement('div');
-            let width = 500 / num;
+            let width = 1000 / num;
             pixel.classList.add('pixel');
             pixel.style.cssText += `width: ${width}px; height: ${width}px`;
             row.appendChild(pixel);
