@@ -7,27 +7,29 @@ body {
 
 .container {
     display: flex;
-    flex: 1;
+    flex: 1 auto;
 }
 
 #canvas {
     flex-direction: column;
+    box-sizing: border-box;
     width: 1000px;
     height: 1000px;
+    justify-content: center;
+    align-items: center;
 }
 
 .pixel {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid pink 2px;
+    box-sizing: border-box;
+    border: solid pink 1px;
     gap: 0px;
-    margin: 0;
-    flex: 1 auto;
+    flex: 1 0 auto;
 }
 
 .row {
     display: flex;
     gap: 0;
-    margin: 0;
 }
